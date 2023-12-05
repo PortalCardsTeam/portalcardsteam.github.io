@@ -26,11 +26,15 @@
         fill: #f47a56;
       }
 
-      .tut-7, .tut-8, .tut-6 {
+      .tut-7, .tut-8, .tut-9, .tut-6 {
         stroke-width: 0px;
       }
 
       .tut-8 {
+        fill: #231f20;
+      }
+
+      .tut-9 {
         fill: #c798c5;
       }
 
@@ -44,7 +48,7 @@
     </style>
   </defs>
   <g id="Layer_1-2" data-name="Layer 1">
-    <rect id="Outer" class="tut-8" width="96.66" height="36.73" rx="2" ry="2"/>
+    <rect id="Outer" class="tut-9" width="96.66" height="36.73" rx="2" ry="2"/>
     <rect id="Inner" class="tut-6" x="2.18" y="1.64" width="92.3" height="33.26" rx="8" ry="8"/>
     <g id="Stars">
       <path id="Star2" class="tut-1" d="m2.18,33.5h0c.02.82.7,1.47,1.54,1.49h0,0c-.84.02-1.52.68-1.54,1.49h0s0,0,0,0c-.02-.82-.7-1.47-1.54-1.49h0,0c.84-.02,1.52-.68,1.54-1.49h0Z"/>
@@ -79,5 +83,6 @@
       <path class="tut-4" d="m74.88,21.4c-.13,0-.24-.11-.24-.24v-3.69h-7.43v3.69c0,.13-.11.24-.24.24s-.24-.11-.24-.24v-7.91c0-.13.11-.24.24-.24h7.91c.13,0,.24.11.24.24v7.91c0,.13-.11.24-.24.24Zm-7.67-4.42h7.43v-3.5h-7.43v3.5Z"/>
       <path class="tut-4" d="m84.56,21.4h-7.91c-.13,0-.24-.11-.24-.24v-7.91c0-.13.11-.24.24-.24s.24.11.24.24v7.67h7.67c.13,0,.24.11.24.24s-.11.24-.24.24Z"/>
     </g>
+    <rect class="tut-8" x="90.97" y="24.11" width="5.61" height=".94" rx=".2" ry=".2" transform="translate(34.67 -52.26) rotate(37.75)"/>
   </g>
 </svg>
