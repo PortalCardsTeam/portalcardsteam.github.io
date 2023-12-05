@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from 'svelte';
-
     import Experience_SVG from "../assets/svg_experience.svelte";
+    import Preview from "./Previews.svelte"
 
     function typedKeys<T>(o: T): (keyof T)[] {
     // type cast should be safe because that's what really Object.keys() does
@@ -9,16 +9,20 @@
     }
 
     let clicked: boolean = false;
+    let hovered: boolean = false;
 
     let aboutTexts: object = {
         exposition: "",
         evaluation: "",
-        embryo: "",
-        experience: ""
+        embryo: ""
     };
 
     function fullScreen(): void {
         clicked = !clicked;
+    }
+
+    function preview(is: boolean): void {
+        hovered = is;
     }
 
     async function getText(name: string): Promise<void> {
@@ -37,8 +41,11 @@
     });
 </script>
 
-<div class="card" on:click={ fullScreen } on:keydown={ fullScreen } class:clicked>
+<div class="card" on:click={ fullScreen } on:mouseenter={ () => preview(true) } on:mouseleave={ () => preview(false) } on:keydown={ fullScreen } class:clicked>
     <Experience_SVG class="title" />
+    {#if hovered && !clicked}
+        <Preview name="experience" id="preview" class="preview" />
+    {/if}
     {#if clicked}
         <div class="content">
             {#each Object.entries(aboutTexts) as [title, text]}
@@ -48,13 +55,7 @@
                         <p class="content-text-paragraph">{ text }</p>
                     </div>
                 {:else}
-                    <div id={ title } class="content-footer">
-                        <a href="https://portal-cards.circle.so/join?invitation_token=490322c75818db0e5ac839ae956a9e4fa220e59c-bb34c7dd-f9b6-4dcd-a776-b1f9ec73504e" target="_blank" rel="noopener noreferrer"></a>
-                        <div class="content-text">
-                            <h1 class="content-text-title">{ title }</h1>
-                            <p class="content-text-paragraph">{ text }</p>
-                        </div>
-                    </div>
+                    <Preview name="experience" id={ title } class="content-footer" />
                 {/if}
             {/each}
         </div>

@@ -38,16 +38,55 @@ body {
 .card {
   display: flex;
   justify-content: safe center;
-  align-items: start;
+  align-items: flex-start;
+  flex-wrap: wrap;
   border-radius: 20px;
   width: 33.3333333333vw;
   height: 29.3333333333vh;
   transition: 0.5s;
 }
 .card:hover {
+  align-items: space-evenly;
   background-color: #2b2e33;
   height: 46vh;
   transition: 0.5s 0.2s;
+}
+.card:hover .title {
+  transition: 0.5s 0.2s;
+}
+.card:hover .preview {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #181b1f;
+  text-align: center;
+  margin-top: 1.5vh;
+  width: 22.2222222222vw;
+  border-radius: 10px;
+  animation-delay: 1s;
+  animation: fade-in 1s ease-in-out forwards;
+}
+.card:hover .preview a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  height: 100%;
+  background-color: #e07758;
+  border-radius: 7.5px;
+  color: #e07758;
+  text-decoration: none;
+}
+.card:hover .preview a::before {
+  content: "Portal Cards ⤴";
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 80%;
+  background-color: #eeeae1;
+  border-radius: 10px;
 }
 .card:hover ~ .card {
   height: 21vh;
@@ -155,6 +194,41 @@ body {
   text-decoration: none;
 }
 .content .content-footer a::before {
+  content: "Portal Cards ⤴";
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 80%;
+  background-color: #eeeae1;
+  border-radius: 10px;
+}
+
+.preview {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #181b1f;
+  text-align: center;
+  margin-bottom: 3vh;
+  width: 33.3333333333vw;
+  border-radius: 10px;
+  animation-delay: 1s;
+  animation: fade-out 1s ease-in-out forwards;
+}
+.preview a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 33%;
+  height: 100%;
+  background-color: #e07758;
+  border-radius: 7.5px;
+  color: #e07758;
+  text-decoration: none;
+}
+.preview a::before {
   content: "Portal Cards ⤴";
   position: relative;
   display: flex;
