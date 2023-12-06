@@ -3,19 +3,9 @@
     import Experience_SVG from "../assets/svg_experience.svelte";
     import Preview from "./Previews.svelte"
 
-    function typedKeys<T>(o: T): (keyof T)[] {
-    // type cast should be safe because that's what really Object.keys() does
-        return Object.keys(o) as (keyof T)[];
-    }
-
+    // Card Events \\
     let clicked: boolean = false;
     let hovered: boolean = false;
-
-    let aboutTexts: object = {
-        exposition: "",
-        evaluation: "",
-        embryo: ""
-    };
 
     function fullScreen(): void {
         clicked = !clicked;
@@ -24,6 +14,18 @@
     function preview(is: boolean): void {
         hovered = is;
     }
+
+    // Text \\
+    function typedKeys<T>(o: T): (keyof T)[] {
+    // type cast should be safe because that's what really Object.keys() does
+        return Object.keys(o) as (keyof T)[];
+    }
+
+    let aboutTexts: object = {
+        exposition: "",
+        evaluation: "",
+        embryo: ""
+    };
 
     async function getText(name: string): Promise<void> {
         const path = `${name}.txt`;
@@ -49,15 +51,12 @@
     {#if clicked}
         <div class="content">
             {#each Object.entries(aboutTexts) as [title, text]}
-                {#if title != "experience"}
-                    <div id={ title } class="content-text">
-                        <h1 class="content-text-title">{ title }</h1>
-                        <p class="content-text-paragraph">{ text }</p>
-                    </div>
-                {:else}
-                    <Preview name="experience" id={ title } class="content-footer" />
-                {/if}
+                <div id={ title } class="content-text">
+                    <h1 class="content-text-title">{ title }</h1>
+                    <p class="content-text-paragraph">{ text }</p>
+                </div>
             {/each}
+            <Preview name="experience" id="experience" class="content-footer" />
         </div>
     {/if}
 </div>

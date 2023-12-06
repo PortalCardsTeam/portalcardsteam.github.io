@@ -6,14 +6,18 @@ $card-other-height: calc(1/4 * 100vh - 4vh)
 @keyframes fade-in
     0%
         opacity: 0
+        transform: translateY(3vh)
     100%
         opacity: 1
+        transform: translateY(0)
 
 @keyframes fade-out
     0%
         opacity: 1
+        transform: translateY(0)
     100%
         opacity: 0
+        transform: translateY(3vh)
 body
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif
     color: white
@@ -46,7 +50,7 @@ body
         height: $card-hover-height
         transition: 0.5s 0.2s
         .title
-            //flex-basis: 100%
+            flex-basis: 100%
             transition: 0.5s 0.2s
         .preview
             display: flex
@@ -55,19 +59,21 @@ body
             //flex-basis: 100%
             background-color: #181b1f
             text-align: center
-            margin-top: 1.5vh
+            margin-bottom: 1.5vh
             width: $card-width/1.5
             border-radius: 10px
             animation-delay: 1s
             animation: fade-in 1s ease-in-out forwards
+            .content-text
+                width: calc($card-width / 2.5)
             a
+                position: relative
                 display: flex
                 justify-content: center
                 align-items: center
-                width: 33%
-                height: 100%
+                height: 5vh
                 background-color: #e07758
-                border-radius: 7.5px
+                border-radius: 5px
                 color: #e07758
                 text-decoration: none
                 &::before
@@ -109,17 +115,10 @@ body
             margin: auto
             transition: 1s
         .content
-            opacity: 0.5
             position: relative
-            top: calc($card-height/2)
+            top: calc($card-height / 2)
             animation-delay: 1s
             animation: fade-in 1s ease-in-out forwards
-            .content-text
-                animation-delay: 1s
-                animation: fade-in 1s ease-in-out forwards
-            .content-footer
-                animation-delay: 1s
-                animation: fade-in 1s ease-in-out forwards
         &~ .card
             opacity: 0
             transform: translateY(100vh)
@@ -135,9 +134,10 @@ body
     width: $card-width
     transition: 0.5s
 .content
+    position: relative
     display: flex
     flex-wrap: wrap
-    justify-content:  space-evenly
+    justify-content: space-evenly
     margin: auto
     width: calc($card-width * 2)
     animation-delay: 1s
@@ -145,8 +145,6 @@ body
     .content-text
         display: block
         width: calc($card-width / 2)
-        animation-delay: 1s
-        animation: fade-out 1s ease-in-out forwards
     .content-footer
         display: flex
         justify-content: space-evenly
@@ -157,8 +155,6 @@ body
         width: $card-width
         background-color: #181b1f
         border-radius: 10px
-        animation-delay: 1s
-        animation: fade-out 1s ease-in-out forwards
         a
             display: flex
             justify-content: center
@@ -178,7 +174,7 @@ body
                 width: 90%
                 height: 80%
                 background-color: #eeeae1
-                border-radius: 10px
+                border-radius: 20px
 .preview
     display: flex
     justify-content: space-evenly
@@ -210,5 +206,6 @@ body
             width: 90%
             height: 80%
             background-color: #eeeae1
-            border-radius: 10px
+            border-radius: 20px
 
+// Responsiveness \\
