@@ -50,7 +50,6 @@ body {
   transition: 0.5s;
 }
 .card:hover {
-  align-items: space-evenly;
   background-color: #2b2e33;
   height: 46vh;
   transition: 0.5s 0.2s;
@@ -74,7 +73,7 @@ body {
 .card:hover .preview .content-text {
   width: 13.3333333333vw;
 }
-.card:hover .preview a {
+.card:hover .preview .link {
   position: relative;
   display: flex;
   justify-content: center;
@@ -84,8 +83,9 @@ body {
   border-radius: 5px;
   color: #e07758;
   text-decoration: none;
+  transition: 0.2s;
 }
-.card:hover .preview a::before {
+.card:hover .preview .link::before {
   content: "Portal Cards ⤴";
   position: relative;
   display: flex;
@@ -95,6 +95,15 @@ body {
   height: 80%;
   background-color: #eeeae1;
   border-radius: 10px;
+  transition: 0.2s;
+}
+.card:hover .preview .link:hover {
+  height: 3.3333333333vh;
+  background-color: #eeeae1;
+  color: #eeeae1;
+}
+.card:hover .preview .link:hover::before {
+  background-color: #e07758;
 }
 .card:hover ~ .card {
   height: 21vh;
@@ -114,25 +123,20 @@ body {
 }
 .card.clicked {
   position: absolute;
+  align-items: center;
   background-color: #2b2e33;
   z-index: 100000;
   height: 95vh;
   width: 95vw;
-  flex-direction: column;
-  align-items: safe center;
   overflow-y: auto;
   margin: auto;
   transition: 1s 0.2s;
 }
 .card.clicked .title {
   position: absolute;
-  top: 0;
-  margin: auto;
   transition: 1s;
 }
 .card.clicked .content {
-  position: relative;
-  top: 14.6666666667vh;
   animation-delay: 1s;
   animation: fade-in 1s ease-in-out forwards;
 }
@@ -148,7 +152,11 @@ body {
 }
 
 .title {
+  top: 0;
+  margin: 0;
+  padding: 0;
   display: block;
+  flex-basis: 100%;
   height: 29.3333333333vh;
   width: 33.3333333333vw;
   transition: 0.5s;
@@ -157,9 +165,11 @@ body {
 .content {
   position: relative;
   display: flex;
+  top: 14.6666666667vh;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  margin: auto;
+  margin: 0;
+  padding: 0;
   width: 66.6666666667vw;
   animation-delay: 1s;
   animation: fade-out 1s ease-in-out forwards;
@@ -178,7 +188,7 @@ body {
   background-color: #181b1f;
   border-radius: 10px;
 }
-.content .content-footer a {
+.content .content-footer .link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -188,8 +198,9 @@ body {
   border-radius: 7.5px;
   color: #e07758;
   text-decoration: none;
+  transition: 0.2s;
 }
-.content .content-footer a::before {
+.content .content-footer .link::before {
   content: "Portal Cards ⤴";
   position: relative;
   display: flex;
@@ -199,6 +210,15 @@ body {
   height: 80%;
   background-color: #eeeae1;
   border-radius: 20px;
+  transition: 0.2s;
+}
+.content .content-footer .link:hover {
+  height: 44%;
+  background-color: #eeeae1;
+  color: #eeeae1;
+}
+.content .content-footer .link:hover::before {
+  background-color: #e07758;
 }
 
 .preview {
@@ -213,7 +233,7 @@ body {
   animation-delay: 1s;
   animation: fade-out 1s ease-in-out forwards;
 }
-.preview a {
+.preview .link {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -224,7 +244,7 @@ body {
   color: #e07758;
   text-decoration: none;
 }
-.preview a::before {
+.preview .link::before {
   content: "Portal Cards ⤴";
   position: relative;
   display: flex;
@@ -234,4 +254,45 @@ body {
   height: 80%;
   background-color: #eeeae1;
   border-radius: 20px;
+}
+
+@media screen and (max-width: 1590px) {
+  .title {
+    width: 50vw;
+  }
+  .content {
+    top: 29.3333333333vh;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .content {
+    flex-wrap: wrap;
+  }
+  .content .content-text {
+    width: 100%;
+  }
+  .content .content-footer {
+    width: 33.3333333333vw;
+  }
+  .content .content-footer .content-text {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 980px) {
+  .content-footer .content-text h1 {
+    display: none;
+  }
+}
+@media screen and (max-width: 700px) {
+  .title {
+    width: 66.6666666667vw;
+  }
+  .content .content-footer .link {
+    width: 100%;
+    height: 100%;
+  }
+  .content .content-footer .content-text {
+    display: none;
+    width: 0%;
+  }
 }/*# sourceMappingURL=app.css.map */

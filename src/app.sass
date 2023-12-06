@@ -10,7 +10,6 @@ $card-other-height: calc(1/4 * 100vh - 4vh)
     100%
         opacity: 1
         transform: translateY(0)
-
 @keyframes fade-out
     0%
         opacity: 1
@@ -45,7 +44,6 @@ body
     height: $card-height
     transition: 0.5s
     &:hover
-        align-items: space-evenly
         background-color: #2b2e33
         height: $card-hover-height
         transition: 0.5s 0.2s
@@ -60,13 +58,13 @@ body
             background-color: #181b1f
             text-align: center
             margin-bottom: 1.5vh
-            width: $card-width/1.5
+            width: calc($card-width/1.5)
             border-radius: 10px
             animation-delay: 1s
             animation: fade-in 1s ease-in-out forwards
             .content-text
                 width: calc($card-width / 2.5)
-            a
+            .link
                 position: relative
                 display: flex
                 justify-content: center
@@ -76,6 +74,7 @@ body
                 border-radius: 5px
                 color: #e07758
                 text-decoration: none
+                transition: 0.2s
                 &::before
                     content: "Portal Cards \2934"
                     position: relative
@@ -86,6 +85,13 @@ body
                     height: 80%
                     background-color: #eeeae1
                     border-radius: 10px
+                    transition: 0.2s
+                &:hover
+                    height: calc(5vh * 2/3)
+                    background-color: #eeeae1
+                    color: #eeeae1
+                    &::before
+                        background-color: #e07758
         &~ .card
             height: $card-other-height
             transition: 0.5s
@@ -100,23 +106,18 @@ body
             transition: 0.5s
     &.clicked
         position: absolute
+        align-items: center
         background-color: #2b2e33
         z-index: 100000
         height: 95vh
         width: 95vw
-        flex-direction: column
-        align-items: safe center
         overflow-y: auto
         margin: auto
         transition: 1s 0.2s
         .title
             position: absolute
-            top: 0
-            margin: auto
             transition: 1s
         .content
-            position: relative
-            top: calc($card-height / 2)
             animation-delay: 1s
             animation: fade-in 1s ease-in-out forwards
         &~ .card
@@ -129,16 +130,22 @@ body
         transition: 1s
 
 .title
+    top: 0
+    margin: 0
+    padding: 0
     display: block
+    flex-basis: 100%
     height: $card-height
     width: $card-width
     transition: 0.5s
 .content
     position: relative
     display: flex
+    top: calc($card-height / 2)
     flex-wrap: wrap
     justify-content: space-evenly
-    margin: auto
+    margin: 0
+    padding: 0
     width: calc($card-width * 2)
     animation-delay: 1s
     animation: fade-out 1s ease-in-out forwards
@@ -149,13 +156,13 @@ body
         display: flex
         justify-content: space-evenly
         align-items: center
-        //flex-basis: 100%
+        //flex-basis: 66%
         text-align: center
         margin-bottom: 3vh
         width: $card-width
         background-color: #181b1f
         border-radius: 10px
-        a
+        .link
             display: flex
             justify-content: center
             align-items: center
@@ -165,6 +172,7 @@ body
             border-radius: 7.5px
             color: #e07758
             text-decoration: none
+            transition: 0.2s
             &::before
                 content: "Portal Cards \2934"
                 position: relative
@@ -175,6 +183,13 @@ body
                 height: 80%
                 background-color: #eeeae1
                 border-radius: 20px
+                transition: 0.2s
+            &:hover
+                    height: 44%
+                    background-color: #eeeae1
+                    color: #eeeae1
+                    &::before
+                        background-color: #e07758
 .preview
     display: flex
     justify-content: space-evenly
@@ -187,7 +202,7 @@ body
     border-radius: 10px
     animation-delay: 1s
     animation: fade-out 1s ease-in-out forwards
-    a
+    .link
         display: flex
         justify-content: center
         align-items: center
@@ -208,4 +223,37 @@ body
             background-color: #eeeae1
             border-radius: 20px
 
+// SVG \\
 // Responsiveness \\
+@media screen and (max-width: 1590px)
+    $card-width: calc(1/2 * 100vw)
+    .title
+        width: calc(1/2 * 100vw)
+    .content
+        top: $card-height
+
+@media screen and (max-width: 1024px)
+    .content
+        flex-wrap: wrap
+        .content-text
+            width: 100%
+        .content-footer
+            width: $card-width
+            .content-text
+                width: 50%
+@media screen and (max-width: 980px)
+    .content-footer
+        .content-text
+            h1
+                display: none
+@media screen and (max-width: 700px)
+    .title
+        width: calc(2/3 * 100vw)
+
+    .content .content-footer
+        .link
+            width: 100%
+            height: 100%
+        .content-text
+           display: none
+           width: 0%
