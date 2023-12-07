@@ -35,8 +35,9 @@ body
     width: 100vw
 .card
     display: flex
-    justify-content: safe center
+    justify-content: center
     align-items: flex-start
+    //flex-direction: row
     flex-wrap: wrap
     //background-color: #2b2e33
     border-radius: 20px
@@ -48,7 +49,7 @@ body
         height: $card-hover-height
         transition: 0.5s 0.2s
         .title
-            flex-basis: 100%
+            //flex-basis: 100%
             transition: 0.5s 0.2s
         .preview
             display: flex
@@ -226,11 +227,22 @@ body
 // SVG \\
 // Responsiveness \\
 @media screen and (max-width: 1590px)
-    $card-width: calc(1/2 * 100vw)
+    .card
+        width: calc(1/2 * 100vw)
     .title
         width: calc(1/2 * 100vw)
     .content
         top: $card-height
+    .preview
+        flex-wrap: wrap
+        width: calc(2/3 * 100vw)
+        .link
+            width: 75%
+            height: 100%
+        .content-text
+            flex-basis: 100%
+            h1
+                display: none
 
 @media screen and (max-width: 1024px)
     .content
@@ -241,15 +253,27 @@ body
             width: $card-width
             .content-text
                 width: 50%
+    .preview
+        width: calc(3/4 * 100vw)
+        .link
+            width: 100%
+        .content-text
+            display: none
 @media screen and (max-width: 980px)
+    .card
+        width: calc(2/3 * 100vw)
+    .title
+        width: calc(2/3 * 100vw)
     .content-footer
         .content-text
             h1
                 display: none
-@media screen and (max-width: 700px)
-    .title
+    .preview
         width: calc(2/3 * 100vw)
-
+        .content-text
+            h1
+                display: none
+@media screen and (max-width: 700px)
     .content .content-footer
         .link
             width: 100%
