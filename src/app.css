@@ -30,6 +30,11 @@ body {
   transition: 0.5s;
 }
 
+main {
+  display: flex;
+  justify-content: center;
+}
+
 .menu {
   display: flex;
   flex-direction: column;
@@ -255,6 +260,120 @@ body {
   border-radius: 20px;
 }
 
+.start {
+  display: none;
+}
+
+.Home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.logo {
+  position: absolute;
+  height: 100vh;
+}
+
+.mug {
+  display: flex;
+  justify-content: center;
+  align-items: space-around;
+  align-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+}
+.mug .lines {
+  display: block;
+  background-color: none;
+  width: 98%;
+  height: 0;
+  margin: 0;
+  padding: 0;
+}
+.mug .lines:nth-child(even) {
+  border-bottom: 0.1vh solid #eeeae1;
+}
+.mug .lines:nth-child(odd) {
+  border-bottom: 0.5vh solid #eeeae1;
+}
+.mug .lines:nth-child(odd):nth-child(1)::before {
+  contents: "96";
+}
+.mug .lines:nth-child(odd):nth-child(1)::after {
+  contents: "96";
+}
+.mug .lines:nth-child(odd):nth-child(2)::before {
+  contents: "90";
+}
+.mug .lines:nth-child(odd):nth-child(2)::after {
+  contents: "90";
+}
+.mug .lines:nth-child(odd):nth-child(3)::before {
+  contents: "84";
+}
+.mug .lines:nth-child(odd):nth-child(3)::after {
+  contents: "84";
+}
+.mug .lines:nth-child(odd):nth-child(4)::before {
+  contents: "78";
+}
+.mug .lines:nth-child(odd):nth-child(4)::after {
+  contents: "78";
+}
+.mug .lines:nth-child(odd):nth-child(5)::before {
+  contents: "72";
+}
+.mug .lines:nth-child(odd):nth-child(5)::after {
+  contents: "72";
+}
+.mug .lines:nth-child(odd):nth-child(6)::before {
+  contents: "66";
+}
+.mug .lines:nth-child(odd):nth-child(6)::after {
+  contents: "66";
+}
+.mug .lines:nth-child(odd):nth-child(7)::before {
+  contents: "60";
+}
+.mug .lines:nth-child(odd):nth-child(7)::after {
+  contents: "60";
+}
+.mug .lines:nth-child(odd):nth-child(8)::before {
+  contents: "54";
+}
+.mug .lines:nth-child(odd):nth-child(8)::after {
+  contents: "54";
+}
+.mug .lines:nth-child(odd):nth-child(9)::before {
+  contents: "48";
+}
+.mug .lines:nth-child(odd):nth-child(9)::after {
+  contents: "48";
+}
+.mug .lines:nth-child(odd):nth-child(10)::before {
+  contents: "42";
+}
+.mug .lines:nth-child(odd):nth-child(10)::after {
+  contents: "42";
+}
+.mug .lines:nth-child(odd):nth-child(11)::before {
+  contents: "36";
+}
+.mug .lines:nth-child(odd):nth-child(11)::after {
+  contents: "36";
+}
+.mug .lines:nth-child(odd):nth-child(12)::before {
+  contents: "30";
+}
+.mug .lines:nth-child(odd):nth-child(12)::after {
+  contents: "30";
+}
+
 @media screen and (max-width: 1590px) {
   .card {
     width: 50vw;
@@ -280,19 +399,6 @@ body {
     display: none;
   }
 }
-.mug {
-  display: flex;
-  justify-content: center;
-  align-items: space-around;
-  align-content: space-around;
-  width: 98vw;
-  height: 98vh;
-}
-.mug .lines {
-  width: 100%;
-  border-bottom: 1vh solid #fff;
-}
-
 @media screen and (max-width: 1024px) {
   .content {
     flex-wrap: wrap;

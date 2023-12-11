@@ -5,14 +5,14 @@
   import Tutorial from './lib/Tutorial.svelte';
   import Home from './lib/Home.svelte';
 
-  let starting: boolean = false;
+  let starting: boolean = true;
   function begin() : void {
     starting = true;
   }
 </script>
 
 <main>
-  <Home on:click={ begin }/>
+  <!--Home on:click={ begin } class={ starting ? "start" : ""}/-->
   {#if starting}
     <div class="menu">
       <Experience />
