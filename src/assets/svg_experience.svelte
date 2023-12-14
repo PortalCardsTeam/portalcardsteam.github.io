@@ -7,7 +7,7 @@
   let timings: number[] = [timing / 8, timing / 4, timing /2]
 </script>
 
-<svg class={$$props.class} on:mouseenter={() => entered = !entered} id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96.66 36.73">
+<svg class={$$props.class} on:load={() => entered = !entered} id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96.66 36.73">
   <defs>
     <style>
       .exp-1, .exp-2, .exp-3, .exp-4, .exp-5 {

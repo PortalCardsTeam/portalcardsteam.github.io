@@ -8,5 +8,7 @@
 
 <div class="card" on:click={fullScreen} class:clicked>
     <Tutorial_SVG class="title" />
-
+    {#if clicked}
+        <h1><i>COMING SOON...</i></h1>
+    {/if}
 </div>
