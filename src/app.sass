@@ -79,16 +79,14 @@ main
                 justify-content: center
                 align-items: center
                 height: 5vh
-                background-color: $theme-color-exp
                 border-radius: 5px
-                color: $theme-color-exp
                 text-decoration: none
                 transition: 0.2s
                 &::before
-                    content: "Portal Cards \2934"
                     position: relative
                     display: flex
                     justify-content: center
+                    font-size: 0.75em
                     align-items: center
                     width: 90%
                     height: 80%
@@ -99,8 +97,28 @@ main
                     height: calc(5vh * 2/3)
                     background-color: $theme-color-neutral
                     color: $theme-color-neutral
+        #experience.preview
+            .link
+                background-color: $theme-color-exp
+                color: $theme-color-exp
+                &::before
+                    content: "Portal Cards \2934"
+                &:hover
+                    background-color: $theme-color-neutral
+                    color: $theme-color-neutral
                     &::before
                         background-color: $theme-color-exp
+        #feedback.preview
+            .link
+                background-color: $theme-color-fee
+                color: $theme-color-fee
+                &::before
+                    content: "Feedback Forms \2934"
+                &:hover
+                    background-color: $theme-color-neutral
+                    color: $theme-color-neutral
+                    &::before
+                        background-color: $theme-color-fee
         &~ .card
             height: $card-other-height
             transition: 0.5s
@@ -194,11 +212,33 @@ main
                 border-radius: 20px
                 transition: 0.2s
             &:hover
-                    height: 44%
-                    background-color: $theme-color-neutral
-                    color: $theme-color-neutral
-                    &::before
-                        background-color: $theme-color-exp
+                height: 44%
+                background-color: $theme-color-neutral
+                color: $theme-color-neutral
+                &::before
+                    background-color: $theme-color-exp
+    #experience.content-footer
+        .link
+            background-color: $theme-color-exp
+            color: $theme-color-exp
+            &::before
+                content: "Portal Cards \2934"
+            &:hover
+                background-color: $theme-color-neutral
+                color: $theme-color-neutral
+                &::before
+                    background-color: $theme-color-exp
+    #feedback.content-footer
+        .link
+            background-color: $theme-color-fee
+            color: $theme-color-fee
+            &::before
+                content: "Feedback Forms \2934"
+            &:hover
+                background-color: $theme-color-neutral
+                color: $theme-color-neutral
+                &::before
+                    background-color: $theme-color-fee
 .preview
     display: flex
     justify-content: space-evenly

@@ -43,10 +43,11 @@
     });
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class="card" on:click={ fullScreen } on:mouseenter={ () => preview(true) } on:mouseleave={ () => preview(false) } on:keydown={ fullScreen } class:clicked>
     <Experience_SVG class="title" />
     {#if hovered && !clicked}
-        <Preview name="experience" id="preview" class="preview" />
+        <Preview name="experience" id="experience" class="preview" />
     {/if}
     {#if clicked}
         <div class="content">

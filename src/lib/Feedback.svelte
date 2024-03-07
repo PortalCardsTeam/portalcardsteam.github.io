@@ -3,13 +3,21 @@
     import Title from "../assets/responses/title.svelte";
     import Scale from "../assets/responses/scale.svelte";
     import LongAnswer from "../assets/responses/longAnswer.svelte";
+    import Preview from "./Previews.svelte"
 
     let clicked = false;
-    function openFull() {
+    let hovered = false;
+    function openFull(): void {
         clicked = true;
     }
-    function closeFull() {
+    function closeFull(): void {
         clicked = false;
+    }
+    function fullScreen(): void {
+        clicked = !clicked;
+    }
+    function preview(is: boolean): void {
+        hovered = is;
     }
     let questions = [
         {
@@ -63,9 +71,17 @@
     $: prefilledLink = `https://docs.google.com/forms/d/e/1FAIpQLSftUdzMfKeWyvxS5UnUOmxXzJ5B_aXZIHWukcIOoRrGQehl7Q/formResponse?usp=pp_url&entry.183281767=${responses[0]}&entry.1023429075=${responses[1]}&entry.402250124=${responses[2]}+&entry.1815224424=${responses[3]}&entry.2096326107=${responses[4]}&entry.1682932200=${responses[5]}+&entry.817827511=${responses[6]}+&entry.1165737047=${responses[7]}&entry.2073750317=${responses[8]}+&entry.593222785=${responses[9]}+&entry.998363241=${responses[10]}+&entry.1609868740=${responses[11]}+&entry.1447925980=${responses[12]}+&entry.99742739=${responses[13]}+&entry.682629952=${responses[14]}+&entry.1414082629=${responses[15]}+&entry.1958917030=${responses[16]}+&entry.1770400223=${responses[17]}+&entry.1918615978=${responses[18]}+&entry.446311397=${responses[19]}+&entry.1301494103=${responses[20]}+&entry.922060711=${responses[21]}+&entry.844162813=${responses[22]}+&submit=Submit`;
 </script>
 
-{#if clicked}
-    <div class="exit" on:click={closeFull}><h1>X</h1></div>
-{/if}
+<div class="card" on:click={fullScreen} on:mouseenter={ () => preview(true) } on:mouseleave={ () => preview(false) } on:keydown={ fullScreen }>
+    <Feedback_SVG class="title" />
+    {#if hovered}
+        <Preview name="feedback" id="feedback" class="preview" />
+    {/if}
+    {#if clicked}
+        <!--Preview name="feedback" id="feedback" class="content-footer" /-->
+    {/if}
+</div>
+
+<!--
 <div class="card" on:click={openFull} class:clicked>
     <Feedback_SVG class="title" />
     {#if clicked}
@@ -91,6 +107,7 @@
         </form>
     {/if}
 </div>
+-->
 
 <style lang="sass">
     $card-height: calc(1/3 * 100vh - 4vh)

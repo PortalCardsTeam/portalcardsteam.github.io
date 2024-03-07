@@ -83,17 +83,15 @@ main {
   justify-content: center;
   align-items: center;
   height: 5vh;
-  background-color: #e07758;
   border-radius: 5px;
-  color: #e07758;
   text-decoration: none;
   transition: 0.2s;
 }
 .card:hover .preview .link::before {
-  content: "Portal Cards ⤴";
   position: relative;
   display: flex;
   justify-content: center;
+  font-size: 0.75em;
   align-items: center;
   width: 90%;
   height: 80%;
@@ -106,8 +104,33 @@ main {
   background-color: #eeeae1;
   color: #eeeae1;
 }
-.card:hover .preview .link:hover::before {
+.card:hover #experience.preview .link {
   background-color: #e07758;
+  color: #e07758;
+}
+.card:hover #experience.preview .link::before {
+  content: "Portal Cards ⤴";
+}
+.card:hover #experience.preview .link:hover {
+  background-color: #eeeae1;
+  color: #eeeae1;
+}
+.card:hover #experience.preview .link:hover::before {
+  background-color: #e07758;
+}
+.card:hover #feedback.preview .link {
+  background-color: #214745;
+  color: #214745;
+}
+.card:hover #feedback.preview .link::before {
+  content: "Feedback Forms ⤴";
+}
+.card:hover #feedback.preview .link:hover {
+  background-color: #eeeae1;
+  color: #eeeae1;
+}
+.card:hover #feedback.preview .link:hover::before {
+  background-color: #214745;
 }
 .card:hover ~ .card {
   height: 21vh;
@@ -223,6 +246,34 @@ main {
 }
 .content .content-footer .link:hover::before {
   background-color: #e07758;
+}
+.content #experience.content-footer .link {
+  background-color: #e07758;
+  color: #e07758;
+}
+.content #experience.content-footer .link::before {
+  content: "Portal Cards ⤴";
+}
+.content #experience.content-footer .link:hover {
+  background-color: #eeeae1;
+  color: #eeeae1;
+}
+.content #experience.content-footer .link:hover::before {
+  background-color: #e07758;
+}
+.content #feedback.content-footer .link {
+  background-color: #214745;
+  color: #214745;
+}
+.content #feedback.content-footer .link::before {
+  content: "Feedback Forms ⤴";
+}
+.content #feedback.content-footer .link:hover {
+  background-color: #eeeae1;
+  color: #eeeae1;
+}
+.content #feedback.content-footer .link:hover::before {
+  background-color: #214745;
 }
 
 .preview {
